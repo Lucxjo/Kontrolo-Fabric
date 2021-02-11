@@ -1,9 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "ktrl",
   "version": "${version}",
-
-  "name": "Example Mod",
+  "name": "Kontrolo",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     {
@@ -15,7 +14,7 @@
   ],
   "contact": {
     "homepage": "https://ludoviko.xyz/",
-    "sources": "https://github.com/Lucxjo/mBlokoj",
+    "sources": "https://github.com/Lucxjo/Kontrolo",
     "email": "minecraft@ludoviko.xyz"
   },
 
@@ -27,7 +26,7 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "xyz.ludoviko.mblok.mBlokoj"
+        "value": "xyz.ludoviko.ktrl.Kontrolo"
       }
     ]
   },
