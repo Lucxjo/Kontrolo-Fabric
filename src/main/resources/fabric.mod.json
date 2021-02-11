@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "modid",
+  "version": "${version}",
+
+  "name": "Example Mod",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    {
+      "name": "Ludoviko",
+      "contact": {
+        "email": "me@ludoviko.xyz"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://ludoviko.xyz/",
+    "sources": "https://github.com/Lucxjo/mBlokoj",
+    "email": "minecraft@ludoviko.xyz"
+  },
+
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "xyz.ludoviko.mblok.mBlokoj"
+      }
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.8.7",
+    "fabric": "*",
+    "fabric-language-kotlin": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
