@@ -17,6 +17,10 @@ minecraft {
 
 repositories {
     maven { url = "http://maven.fabricmc.net/" }
+    maven {
+        name = "CottonMC"
+        url = "https://server.bbkr.space/artifactory/libs-release"
+    }
 }
 
 dependencies {
@@ -31,6 +35,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
     
     modImplementation "io.github.prospector:modmenu:1.14.13+build.19"
+
+    modImplementation include("io.github.cottonmc:LibGui:3.3.3+1.16.5")
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
