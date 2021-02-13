@@ -4,7 +4,7 @@
 name: Gradle Package
 
 on:
-  release:
+  workflow_dispatch:
     types: [created]
 
 jobs:
