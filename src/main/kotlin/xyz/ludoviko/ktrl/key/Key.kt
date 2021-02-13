@@ -24,7 +24,7 @@ object Key {
         ClientTickEvents.END_CLIENT_TICK.register(
             ClientTickEvents.EndTick { client: MinecraftClient ->
                 while (keyBinding.wasPressed()) {
-                    client.openScreen(Screen(UI()))
+                    client.openScreen(Screen(UI(client)))
                 }
             }
         )

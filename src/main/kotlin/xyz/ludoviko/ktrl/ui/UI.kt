@@ -4,10 +4,11 @@ import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription
 import io.github.cottonmc.cotton.gui.widget.WButton
 import io.github.cottonmc.cotton.gui.widget.WGridPanel
 import io.github.cottonmc.cotton.gui.widget.WLabel
+import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import net.minecraft.text.TranslatableText
 
-class UI : LightweightGuiDescription() {
+class UI(val client: MinecraftClient) : LightweightGuiDescription() {
     val root = WGridPanel()
 
     init {
@@ -22,7 +23,21 @@ class UI : LightweightGuiDescription() {
         val rainButton = WButton(Text.of("Rain"))
         val thunderButton = WButton(Text.of("Thunder"))
 
+        clearButton.setOnClick {
+            client.player?.sendChatMessage("/weather clear")
+        }
+
+        rainButton.setOnClick {
+            client.player?.sendChatMessage("/weather rain")
+        }
+
+        thunderButton.setOnClick {
+            client.player?.sendChatMessage("/weather thunder")
+        }
+
         root.add(weatherLabel, 0, 1)
         root.add(clearButton, 0, 2, 3, 1)
+        root.add(rainButton, 3, 2, 3, 1)
+        root.add(thunderButton, 6, 2, 3, 1)
     }
 }
