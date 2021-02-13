@@ -5,7 +5,11 @@ name: Gradle Package
 
 on:
   workflow_dispatch:
-    types: [created]
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: false
+        default: 'warning'
 
 jobs:
   build:
