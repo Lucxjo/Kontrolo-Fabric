@@ -15,5 +15,6 @@
     "text.ktrl.gm.survival.label": "Survival",
     "text.ktrl.gm.adventure.label": "Adventure",
     "text.ktrl.gm.spectator.label": "Spectator",
-    "text.ktrl.time.zero.label": "Set 0"
+    "text.ktrl.time.zero.label": "Set 0",
+    "text.ktrl.time.button": "Current Time"
 }

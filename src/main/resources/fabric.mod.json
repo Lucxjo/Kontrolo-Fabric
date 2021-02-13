@@ -15,7 +15,8 @@
   "contact": {
     "homepage": "https://ludoviko.xyz/",
     "sources": "https://github.com/Lucxjo/Kontrolo",
-    "email": "minecraft@ludoviko.xyz"
+    "email": "minecraft@ludoviko.xyz",
+    "issues": "https://github.com/Lucxjo/Kontrolo/issues"
   },
   "license": "MIT",
   "icon": "assets/ktrl/icon.png",
@@ -30,6 +31,9 @@
   },
   "mixins": [
   ],
+  "custom": {
+    "modmenu:clientsideOnly": true
+  },
   "depends": {
     "fabricloader": ">=0.8.7",
     "fabric": "*",

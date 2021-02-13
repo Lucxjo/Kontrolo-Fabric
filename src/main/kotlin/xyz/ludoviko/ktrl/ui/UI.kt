@@ -52,6 +52,7 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         val zeroButton = WButton(TranslatableText("text.ktrl.time.zero.label"))
         val addThousand = WButton(Text.of("+ 1000"))
         val addTenThousand = WButton(Text.of("+ 10000"))
+        val timeButton = WButton(TranslatableText("text.ktrl.time.button"))
 
         dayButton.setOnClick {
             client.player?.sendChatMessage("/time set day")
@@ -81,6 +82,10 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
             client.player?.sendChatMessage("/time add 10000")
         }
 
+        timeButton.setOnClick {
+            client.player?.sendChatMessage("/time query gametime")
+        }
+
         root.add(timeLabel, 0, 1 + offset)
         root.add(dayButton, 0, 2 + offset, 4, 1)
         root.add(noonButton, 4, 2 + offset, 4, 1)
@@ -89,6 +94,7 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         root.add(zeroButton, 0, 3 + offset, 4, 1)
         root.add(addThousand, 4, 3 + offset, 4, 1)
         root.add(addTenThousand, 8, 3 + offset, 4, 1)
+        root.add(timeButton, 12, 3 + offset, 4, 1)
     }
 
     fun addGamemode(root: WGridPanel, offset: Int = 0) {
