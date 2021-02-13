@@ -27,14 +27,17 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
 
         clearButton.setOnClick {
             client.player?.sendChatMessage("/weather clear")
+            client.player?.closeScreen()
         }
 
         rainButton.setOnClick {
             client.player?.sendChatMessage("/weather rain")
+            client.player?.closeScreen()
         }
 
         thunderButton.setOnClick {
             client.player?.sendChatMessage("/weather thunder")
+            client.player?.closeScreen()
         }
 
         root.add(weatherLabel, 0, 1 + offset)
@@ -56,34 +59,42 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
 
         dayButton.setOnClick {
             client.player?.sendChatMessage("/time set day")
+            client.player?.closeScreen()
         }
 
         noonButton.setOnClick {
             client.player?.sendChatMessage("/time set noon")
+            client.player?.closeScreen()
         }
 
         nightButton.setOnClick {
             client.player?.sendChatMessage("/time set night")
+            client.player?.closeScreen()
         }
 
         mnButton.setOnClick {
             client.player?.sendChatMessage("/time set midnight")
+            client.player?.closeScreen()
         }
 
         zeroButton.setOnClick {
             client.player?.sendChatMessage("/time set 0")
+            client.player?.closeScreen()
         }
 
         addThousand.setOnClick {
             client.player?.sendChatMessage("/time add 1000")
+            client.player?.closeScreen()
         }
 
         addTenThousand.setOnClick {
             client.player?.sendChatMessage("/time add 10000")
+            client.player?.closeScreen()
         }
 
         timeButton.setOnClick {
             client.player?.sendChatMessage("/time query gametime")
+            client.player?.closeScreen()
         }
 
         root.add(timeLabel, 0, 1 + offset)
@@ -106,18 +117,22 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
 
         creativeButton.setOnClick {
             client.player?.sendChatMessage("/gamemode creative")
+            client.player?.closeScreen()
         }
 
         survivalButton.setOnClick {
             client.player?.sendChatMessage("/gamemode survival")
+            client.player?.closeScreen()
         }
 
         adventureButton.setOnClick {
             client.player?.sendChatMessage("/gamemode adventure")
+            client.player?.closeScreen()
         }
 
         spectatorButton.setOnClick {
             client.player?.sendChatMessage("/gamemode spectator")
+            client.player?.closeScreen()
         }
 
         root.add(gamemodeLabel, 0, 1 + offset)

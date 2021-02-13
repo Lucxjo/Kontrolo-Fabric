@@ -8,7 +8,8 @@
     {
       "name": "Ludoviko",
       "contact": {
-        "email": "me@ludoviko.xyz"
+        "email": "me@ludoviko.xyz",
+        "twitter": "https://twitter.com/Ludoviko_"
       }
     }
   ],
@@ -16,7 +17,8 @@
     "homepage": "https://ludoviko.xyz/",
     "sources": "https://github.com/Lucxjo/Kontrolo",
     "email": "minecraft@ludoviko.xyz",
-    "issues": "https://github.com/Lucxjo/Kontrolo/issues"
+    "issues": "https://github.com/Lucxjo/Kontrolo/issues",
+    "twitter": "https://twitter.com/Ludoviko_"
   },
   "license": "MIT",
   "icon": "assets/ktrl/icon.png",
