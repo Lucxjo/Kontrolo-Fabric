@@ -9,5 +9,10 @@
     "text.ktrl.time.day.label": "Tago",
     "text.ktrl.time.night.label": "Nokto",
     "text.ktrl.time.noon.label": "Tagmezo",
-    "text.ktrl.time.mn.label": "Noktomezo"
+    "text.ktrl.time.mn.label": "Noktomezo",
+    "text.ktrl.gm.label": "Ludmaniero",
+    "text.ktrl.gm.creative.label": "Kreiva",
+    "text.ktrl.gm.survival.label": "Postvivado",
+    "text.ktrl.gm.adventure.label": "Aventuro",
+    "text.ktrl.gm.spectator.label": "Spektanto"
 }

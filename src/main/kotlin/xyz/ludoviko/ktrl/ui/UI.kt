@@ -12,12 +12,13 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
 
     init {
         setRootPanel(root)
-        root.setSize(200, 150)
+        root.setSize(250, 150)
         addWeather(root)
-        addTime(root)
+        addTime(root, 3)
+        addGamemode(root, 6)
     }
 
-    fun addWeather(root: WGridPanel) {
+    fun addWeather(root: WGridPanel, offset: Int = 0) {
         val weatherLabel = WLabel(TranslatableText("text.ktrl.weather.label"))
         val clearButton = WButton(TranslatableText("text.ktrl.weather.clear.label"))
         val rainButton = WButton(TranslatableText("text.ktrl.weather.rain.label"))
@@ -35,13 +36,13 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
             client.player?.sendChatMessage("/weather thunder")
         }
 
-        root.add(weatherLabel, 0, 1)
-        root.add(clearButton, 0, 2, 4, 1)
-        root.add(rainButton, 4, 2, 4, 1)
-        root.add(thunderButton, 8, 2, 4, 1)
+        root.add(weatherLabel, 0, 1 + offset)
+        root.add(clearButton, 0, 2 + offset, 5, 1)
+        root.add(rainButton, 5, 2 + offset, 5, 1)
+        root.add(thunderButton, 10, 2 + offset, 5, 1)
     }
 
-    fun addTime(root: WGridPanel) {
+    fun addTime(root: WGridPanel, offset: Int = 0) {
         val timeLabel = WLabel(TranslatableText("text.ktrl.time.label"))
         val dayButton = WButton(TranslatableText("text.ktrl.time.day.label"))
         val noonButton = WButton(TranslatableText("text.ktrl.time.noon.label"))
@@ -64,10 +65,40 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
             client.player?.sendChatMessage("/time set midnight")
         }
 
-        root.add(timeLabel, 0, 4)
-        root.add(dayButton, 0, 5, 3, 1)
-        root.add(noonButton, 3, 5, 3, 1)
-        root.add(nightButton, 6, 5, 3, 1)
-        root.add(mnButton, 9, 5, 3, 1)
+        root.add(timeLabel, 0, 1 + offset)
+        root.add(dayButton, 0, 2 + offset, 4, 1)
+        root.add(noonButton, 4, 2 + offset, 4, 1)
+        root.add(nightButton, 8, 2 + offset, 4, 1)
+        root.add(mnButton, 12, 2 + offset, 4, 1)
+    }
+
+    fun addGamemode(root: WGridPanel, offset: Int = 0) {
+        val gamemodeLabel = WLabel(TranslatableText("text.ktrl.gm.label"))
+        val creativeButton = WButton(TranslatableText("text.ktrl.gm.creative.label"))
+        val survivalButton = WButton(TranslatableText("text.ktrl.gm.survival.label"))
+        val adventureButton = WButton(TranslatableText("text.ktrl.gm.adventure.label"))
+        val spectatorButton = WButton(TranslatableText("text.ktrl.gm.spectator.label"))
+
+        creativeButton.setOnClick {
+            client.player?.sendChatMessage("/gamemode creative")
+        }
+
+        survivalButton.setOnClick {
+            client.player?.sendChatMessage("/gamemode survival")
+        }
+
+        adventureButton.setOnClick {
+            client.player?.sendChatMessage("/gamemode adventure")
+        }
+
+        spectatorButton.setOnClick {
+            client.player?.sendChatMessage("/gamemode spectator")
+        }
+
+        root.add(gamemodeLabel, 0, 1 + offset)
+        root.add(creativeButton, 0, 2 + offset, 4, 1)
+        root.add(survivalButton, 4, 2 + offset, 4, 1)
+        root.add(adventureButton, 8, 2 + offset, 4, 1)
+        root.add(spectatorButton, 12, 2 + offset, 4, 1)
     }
 }

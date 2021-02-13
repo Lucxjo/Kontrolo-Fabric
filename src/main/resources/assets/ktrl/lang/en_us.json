@@ -9,5 +9,10 @@
     "text.ktrl.time.day.label": "Day",
     "text.ktrl.time.night.label": "Night",
     "text.ktrl.time.noon.label": "Noon",
-    "text.ktrl.time.mn.label": "Midnight"
+    "text.ktrl.time.mn.label": "Midnight",
+    "text.ktrl.gm.label": "Gamemode",
+    "text.ktrl.gm.creative.label": "Creative",
+    "text.ktrl.gm.survival.label": "Survival",
+    "text.ktrl.gm.adventure.label": "Adventure",
+    "text.ktrl.gm.spectator.label": "Spectator"
 }
