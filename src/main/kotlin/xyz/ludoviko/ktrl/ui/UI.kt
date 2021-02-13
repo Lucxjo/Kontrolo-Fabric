@@ -14,6 +14,7 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         setRootPanel(root)
         root.setSize(200, 150)
         addWeather(root)
+        addTime(root)
     }
 
     fun addWeather(root: WGridPanel) {
@@ -38,5 +39,35 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         root.add(clearButton, 0, 2, 4, 1)
         root.add(rainButton, 4, 2, 4, 1)
         root.add(thunderButton, 8, 2, 4, 1)
+    }
+
+    fun addTime(root: WGridPanel) {
+        val timeLabel = WLabel(TranslatableText("text.ktrl.time.label"))
+        val dayButton = WButton(TranslatableText("text.ktrl.time.day.label"))
+        val noonButton = WButton(TranslatableText("text.ktrl.time.noon.label"))
+        val nightButton = WButton(TranslatableText("text.ktrl.time.night.label"))
+        val mnButton = WButton(TranslatableText("text.ktrl.time.mn.label"))
+
+        dayButton.setOnClick {
+            client.player?.sendChatMessage("/time set day")
+        }
+
+        noonButton.setOnClick {
+            client.player?.sendChatMessage("/time set noon")
+        }
+
+        nightButton.setOnClick {
+            client.player?.sendChatMessage("/time set night")
+        }
+
+        mnButton.setOnClick {
+            client.player?.sendChatMessage("/time set midnight")
+        }
+
+        root.add(timeLabel, 0, 4)
+        root.add(dayButton, 0, 5, 3, 1)
+        root.add(noonButton, 3, 5, 3, 1)
+        root.add(nightButton, 6, 5, 3, 1)
+        root.add(mnButton, 9, 5, 3, 1)
     }
 }

@@ -4,5 +4,10 @@
     "text.ktrl.weather.label": "Vetero",
     "text.ktrl.weather.clear.label": "Klara",
     "text.ktrl.weather.rain.label": "Pluvego",
-    "text.ktrl.weather.thunder.label": "Fulmotondro"
+    "text.ktrl.weather.thunder.label": "Fulmotondro",
+    "text.ktrl.time.label": "Tempo",
+    "text.ktrl.time.day.label": "Tago",
+    "text.ktrl.time.night.label": "Nokto",
+    "text.ktrl.time.noon.label": "Tagmezo",
+    "text.ktrl.time.mn.label": "Noktomezo"
 }
