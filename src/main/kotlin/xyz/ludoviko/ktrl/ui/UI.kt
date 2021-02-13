@@ -5,6 +5,7 @@ import io.github.cottonmc.cotton.gui.widget.WButton
 import io.github.cottonmc.cotton.gui.widget.WGridPanel
 import io.github.cottonmc.cotton.gui.widget.WLabel
 import net.minecraft.client.MinecraftClient
+import net.minecraft.text.Text
 import net.minecraft.text.TranslatableText
 
 class UI(val client: MinecraftClient) : LightweightGuiDescription() {
@@ -15,7 +16,7 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         root.setSize(250, 150)
         addWeather(root)
         addTime(root, 3)
-        addGamemode(root, 6)
+        addGamemode(root, 7)
     }
 
     fun addWeather(root: WGridPanel, offset: Int = 0) {
@@ -48,6 +49,9 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         val noonButton = WButton(TranslatableText("text.ktrl.time.noon.label"))
         val nightButton = WButton(TranslatableText("text.ktrl.time.night.label"))
         val mnButton = WButton(TranslatableText("text.ktrl.time.mn.label"))
+        val zeroButton = WButton(TranslatableText("text.ktrl.time.zero.label"))
+        val addThousand = WButton(Text.of("+ 1000"))
+        val addTenThousand = WButton(Text.of("+ 10000"))
 
         dayButton.setOnClick {
             client.player?.sendChatMessage("/time set day")
@@ -65,11 +69,26 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
             client.player?.sendChatMessage("/time set midnight")
         }
 
+        zeroButton.setOnClick {
+            client.player?.sendChatMessage("/time set 0")
+        }
+
+        addThousand.setOnClick {
+            client.player?.sendChatMessage("/time add 1000")
+        }
+
+        addTenThousand.setOnClick {
+            client.player?.sendChatMessage("/time add 10000")
+        }
+
         root.add(timeLabel, 0, 1 + offset)
         root.add(dayButton, 0, 2 + offset, 4, 1)
         root.add(noonButton, 4, 2 + offset, 4, 1)
         root.add(nightButton, 8, 2 + offset, 4, 1)
         root.add(mnButton, 12, 2 + offset, 4, 1)
+        root.add(zeroButton, 0, 3 + offset, 4, 1)
+        root.add(addThousand, 4, 3 + offset, 4, 1)
+        root.add(addTenThousand, 8, 3 + offset, 4, 1)
     }
 
     fun addGamemode(root: WGridPanel, offset: Int = 0) {
