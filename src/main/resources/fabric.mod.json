@@ -3,7 +3,7 @@
   "id": "ktrl",
   "version": "${version}",
   "name": "Kontrolo",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Adds a quick command GUI.",
   "authors": [
     {
       "name": "Ludoviko",
@@ -17,10 +17,8 @@
     "sources": "https://github.com/Lucxjo/Kontrolo",
     "email": "minecraft@ludoviko.xyz"
   },
-
   "license": "MIT",
-  "icon": "assets/modid/icon.png",
-
+  "icon": "assets/ktrl/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
