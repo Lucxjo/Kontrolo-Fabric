@@ -12,7 +12,7 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
 
     init {
         setRootPanel(root)
-        root.setSize(150, 150)
+        root.setSize(200, 150)
         addWeather(root)
     }
 
@@ -35,8 +35,8 @@ class UI(val client: MinecraftClient) : LightweightGuiDescription() {
         }
 
         root.add(weatherLabel, 0, 1)
-        root.add(clearButton, 0, 2, 3, 1)
-        root.add(rainButton, 3, 2, 3, 1)
-        root.add(thunderButton, 6, 2, 3, 1)
+        root.add(clearButton, 0, 2, 4, 1)
+        root.add(rainButton, 4, 2, 4, 1)
+        root.add(thunderButton, 8, 2, 4, 1)
     }
 }

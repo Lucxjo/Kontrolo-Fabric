@@ -1,0 +1,8 @@
+{
+    "category.ktrl.gui": "Kontrolo",
+    "key.ktrl.gui": "Kontrolo GUI",
+    "text.ktrl.weather.label": "Vetero",
+    "text.ktrl.weather.clear.label": "Klara",
+    "text.ktrl.weather.rain.label": "Pluvego",
+    "text.ktrl.weather.thunder.label": "Fulmotondro"
+}
