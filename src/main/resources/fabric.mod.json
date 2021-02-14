@@ -34,7 +34,11 @@
   "mixins": [
   ],
   "custom": {
-    "modmenu:clientsideOnly": true
+    "modmenu:clientsideOnly": true,
+    "modupdater": {
+      "strategy": "json",
+      "url": "https://raw.githubusercontent.com/Lucxjo/Kontrolo/main/versions.json"
+    }
   },
   "depends": {
     "fabricloader": ">=0.8.7",
