@@ -1,6 +1,7 @@
 {
     "category.ktrl.gui": "Kontrolo",
     "key.ktrl.gui": "Kontrolo GUI",
+    "key.ktrl.gui.weather": "Weather GUI",
     "text.ktrl.weather.label": "Weather",
     "text.ktrl.weather.clear.label": "Clear",
     "text.ktrl.weather.rain.label": "Rain",

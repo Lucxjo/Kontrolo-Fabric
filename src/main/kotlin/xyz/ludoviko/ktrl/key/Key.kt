@@ -12,7 +12,7 @@ import xyz.ludoviko.ktrl.ui.UI
 
 
 object Key {
-    private val keyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+    private val mainBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
         KeyBinding(
             "key.ktrl.gui",
             InputUtil.Type.KEYSYM,
@@ -20,12 +20,24 @@ object Key {
             "category.ktrl.gui"
         )
     )
+    private val weatherBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+        KeyBinding(
+            "key.ktrl.gui.weather",
+            InputUtil.Type.KEYSYM,
+            GLFW.GLFW_KEY_B,
+            "category.ktrl.gui"
+        )
+    )
 
     init {
         ClientTickEvents.END_CLIENT_TICK.register(
             ClientTickEvents.EndTick { client: MinecraftClient ->
-                while (keyBinding.wasPressed()) {
+                while (mainBinding.wasPressed()) {
                     client.openScreen(Screen(UI(client, GUIType.ALL)))
+                }
+
+                while (weatherBinding.wasPressed()) {
+                    client.openScreen(Screen(UI(client, GUIType.WEATHER)))
                 }
             }
         )

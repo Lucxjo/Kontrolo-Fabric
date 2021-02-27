@@ -14,24 +14,28 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
 
     init {
         setRootPanel(root)
-        root.setSize(250, 150)
+
 
         if (type == GUIType.ALL) {
+            root.setSize(250, 150)
             addWeather(root)
             addTime(root, 3)
             addGamemode(root, 7)
         } else if (type == GUIType.WEATHER) {
-            addWeather(root)
+            root.setSize(150, 50)
+            addWeather(root, size = 1)
         } else if (type == GUIType.TIME) {
+            root.setSize(250, 150)
             addTime(root)
         } else if (type == GUIType.GM) {
+            root.setSize(250, 150)
             addGamemode(root)
         } else {
             Kontrolo.logger.error("GUIType issue!")
         }
     }
 
-    fun addWeather(root: WGridPanel, offset: Int = 0) {
+    fun addWeather(root: WGridPanel, offset: Int = 0, size: Int = 0) {
         val weatherLabel = WLabel(TranslatableText("text.ktrl.weather.label"))
         val clearButton = WButton(TranslatableText("text.ktrl.weather.clear.label"))
         val rainButton = WButton(TranslatableText("text.ktrl.weather.rain.label"))
@@ -53,9 +57,9 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         }
 
         root.add(weatherLabel, 0, 1 + offset)
-        root.add(clearButton, 0, 2 + offset, 5, 1)
-        root.add(rainButton, 5, 2 + offset, 5, 1)
-        root.add(thunderButton, 10, 2 + offset, 5, 1)
+        root.add(clearButton, 0, 2 + offset, 5 - size, 1)
+        root.add(rainButton, 5 - size, 2 + offset, 5 - size, 1)
+        root.add(thunderButton, if (size != 0) 10 - (size + 1) else 10, 2 + offset, 5 - size, 1)
     }
 
     fun addTime(root: WGridPanel, offset: Int = 0) {
