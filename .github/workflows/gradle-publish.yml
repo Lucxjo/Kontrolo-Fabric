@@ -30,8 +30,6 @@ jobs:
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
-    - name: Publish to Curse
-      run: gradle curseforge
       
     - name: Publish to Modrinth
       run: gradle publishModrinth
