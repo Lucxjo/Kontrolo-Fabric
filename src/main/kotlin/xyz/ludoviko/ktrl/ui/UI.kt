@@ -8,7 +8,7 @@ import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import net.minecraft.text.TranslatableText
 
-class UI(val client: MinecraftClient) : LightweightGuiDescription() {
+class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription() {
     val root = WGridPanel()
 
     init {

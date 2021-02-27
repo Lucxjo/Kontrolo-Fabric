@@ -6,6 +6,7 @@ import net.minecraft.client.MinecraftClient
 import net.minecraft.client.options.KeyBinding
 import net.minecraft.client.util.InputUtil
 import org.lwjgl.glfw.GLFW
+import xyz.ludoviko.ktrl.ui.GUIType
 import xyz.ludoviko.ktrl.ui.Screen
 import xyz.ludoviko.ktrl.ui.UI
 
@@ -24,7 +25,7 @@ object Key {
         ClientTickEvents.END_CLIENT_TICK.register(
             ClientTickEvents.EndTick { client: MinecraftClient ->
                 while (keyBinding.wasPressed()) {
-                    client.openScreen(Screen(UI(client)))
+                    client.openScreen(Screen(UI(client, GUIType.ALL)))
                 }
             }
         )
