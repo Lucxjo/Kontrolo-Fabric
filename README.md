@@ -18,3 +18,4 @@ When you press one of the buttons, it sends the command for you. This is why you
 ## Like this mod?
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11QFO6)
+<a href="https://liberapay.com/Ludoviko/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
