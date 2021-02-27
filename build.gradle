@@ -1,8 +1,10 @@
 plugins {
+    id 'java'
     id 'fabric-loom'
     id 'maven-publish'
     id "org.jetbrains.kotlin.jvm"
     id "com.modrinth.minotaur" version "1.1.0"
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -40,7 +42,7 @@ dependencies {
 
     modImplementation include("io.github.cottonmc:LibGui:3.3.3+1.16.5")
 
-    compileOnly "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
+    modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
@@ -78,6 +80,33 @@ jar {
     from "LICENSE"
 }
 
+curseforge {
+    project {
+        apiKey = System.getenv("CURSE_TOKEN")
+        id = '448869'
+        changelogType = 'markdown'
+        changelog = file("CHANGELOG.md")
+        releaseType = 'release'
+        addGameVersion '1.16.5'
+        addGameVersion "Fabric"
+
+        relations {
+            requiredDependency('fabric-api')
+            requiredDependency('fabric-language-kotlin')
+            embeddedLibrary('libgui')
+        }
+
+        afterEvaluate {
+            mainArtifact(remapJar)
+            uploadTask.dependsOn(remapJar)
+        }
+
+    }
+    options {
+        forgeGradleIntegration = false
+    }
+}
+
 // configure the maven publication
 publishing {
     publications {
@@ -108,6 +137,7 @@ task publishModrinth (type: TaskModrinthUpload) {
     uploadFile = remapJar // This links to a task that builds your mod jar and sets "uploadFile" to the mod jar.
     addGameVersion('1.16.5') // Any minecraft version.
     addLoader('fabric') // Can be fabric or forge. Modrinth will support liteloader and rift at a later date.
+    changelog = file("CHANGELOG.md")
 }
 
 compileKotlin.kotlinOptions.jvmTarget = "1.8"
