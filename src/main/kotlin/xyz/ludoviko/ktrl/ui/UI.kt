@@ -7,6 +7,7 @@ import io.github.cottonmc.cotton.gui.widget.WLabel
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import net.minecraft.text.TranslatableText
+import xyz.ludoviko.ktrl.Kontrolo
 
 class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription() {
     val root = WGridPanel()
@@ -14,9 +15,20 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
     init {
         setRootPanel(root)
         root.setSize(250, 150)
-        addWeather(root)
-        addTime(root, 3)
-        addGamemode(root, 7)
+
+        if (type == GUIType.ALL) {
+            addWeather(root)
+            addTime(root, 3)
+            addGamemode(root, 7)
+        } else if (type == GUIType.WEATHER) {
+            addWeather(root)
+        } else if (type == GUIType.TIME) {
+            addTime(root)
+        } else if (type == GUIType.GM) {
+            addGamemode(root)
+        } else {
+            Kontrolo.logger.error("GUIType issue!")
+        }
     }
 
     fun addWeather(root: WGridPanel, offset: Int = 0) {
