@@ -25,10 +25,10 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
             root.setSize(150, 50)
             addWeather(root, size = 1)
         } else if (type == GUIType.TIME) {
-            root.setSize(250, 150)
+            root.setSize(200, 75)
             addTime(root)
         } else if (type == GUIType.GM) {
-            root.setSize(250, 150)
+            root.setSize(150, 50)
             addGamemode(root)
         } else {
             Kontrolo.logger.error("GUIType issue!")

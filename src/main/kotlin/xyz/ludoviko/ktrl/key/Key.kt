@@ -28,6 +28,22 @@ object Key {
             "category.ktrl.gui"
         )
     )
+    private val timeBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+        KeyBinding(
+            "key.ktrl.gui.time",
+            InputUtil.Type.KEYSYM,
+            GLFW.GLFW_KEY_N,
+            "category.ktrl.gui"
+        )
+    )
+    private val gmBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+        KeyBinding(
+            "key.ktrl.gui.gm",
+            InputUtil.Type.KEYSYM,
+            GLFW.GLFW_KEY_M,
+            "category.ktrl.gui"
+        )
+    )
 
     init {
         ClientTickEvents.END_CLIENT_TICK.register(
@@ -38,6 +54,14 @@ object Key {
 
                 while (weatherBinding.wasPressed()) {
                     client.openScreen(Screen(UI(client, GUIType.WEATHER)))
+                }
+
+                while (timeBinding.wasPressed()) {
+                    client.openScreen(Screen(UI(client, GUIType.TIME)))
+                }
+
+                while (gmBinding.wasPressed()) {
+                    client.openScreen(Screen(UI(client, GUIType.GM)))
                 }
             }
         )

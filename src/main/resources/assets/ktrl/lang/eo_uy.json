@@ -17,5 +17,7 @@
     "text.ktrl.gm.spectator.label": "Spektanto",
     "text.ktrl.time.zero.label": "Agordi 0",
     "text.ktrl.time.button": "Nuna Tempo",
-    "key.ktrl.gui.weather": "Vetero GUI"
+    "key.ktrl.gui.weather": "Vetero GUI",
+    "key.ktrl.gui.time": "Tempo GUI",
+    "key.ktrl.gui.gm": "Ludmaniero GUI"
 }
