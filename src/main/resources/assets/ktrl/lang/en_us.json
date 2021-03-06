@@ -23,5 +23,7 @@
     "text.autoconfig.ktrl.title": "Kontrolo Config",
     "text.autoconfig.ktrl.option.timeSettings": "Time Settings",
     "text.autoconfig.ktrl.option.timeSettings.addButton1": "First add button",
-    "text.autoconfig.ktrl.option.timeSettings.addButton2": "Second add button"
+    "text.autoconfig.ktrl.option.timeSettings.addButton2": "Second add button",
+    "text.autoconfig.ktrl.option.weatherSettings": "Weather Settings",
+    "text.autoconfig.ktrl.option.weatherSettings.weatherDelay": "Delay (ticks)"
 }

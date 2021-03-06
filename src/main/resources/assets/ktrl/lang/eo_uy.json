@@ -19,5 +19,11 @@
     "text.ktrl.time.button": "Nuna Tempo",
     "key.ktrl.gui.weather": "Vetero GUI",
     "key.ktrl.gui.time": "Tempo GUI",
-    "key.ktrl.gui.gm": "Ludmaniero GUI"
+    "key.ktrl.gui.gm": "Ludmaniero GUI",
+    "text.autoconfig.ktrl.title": "Kontrola Agordo",
+    "text.autoconfig.ktrl.option.timeSettings": "Agordoj de tempo",
+    "text.autoconfig.ktrl.option.timeSettings.addButton1": "Unua aldona butono",
+    "text.autoconfig.ktrl.option.timeSettings.addButton2": "Dua aldona butono",
+    "text.autoconfig.ktrl.option.weatherSettings": "Veteraj Agordoj",
+    "text.autoconfig.ktrl.option.weatherSettings.weatherDelay": "Prokrasto (tiktakoj)"
 }

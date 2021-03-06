@@ -1,2 +1,3 @@
 - Added config api.
 - Removed curse stuffs.
+- Added support for Cloth Config API
