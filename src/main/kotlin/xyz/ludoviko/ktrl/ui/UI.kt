@@ -4,13 +4,17 @@ import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription
 import io.github.cottonmc.cotton.gui.widget.WButton
 import io.github.cottonmc.cotton.gui.widget.WGridPanel
 import io.github.cottonmc.cotton.gui.widget.WLabel
+import me.shedaniel.autoconfig.AutoConfig
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import net.minecraft.text.TranslatableText
 import xyz.ludoviko.ktrl.Kontrolo
+import xyz.ludoviko.ktrl.config.ModConfig
+
 
 class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription() {
     val root = WGridPanel()
+    var config = AutoConfig.getConfigHolder(ModConfig::class.java).config
 
     init {
         setRootPanel(root)
@@ -42,17 +46,17 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         val thunderButton = WButton(TranslatableText("text.ktrl.weather.thunder.label"))
 
         clearButton.setOnClick {
-            client.player?.sendChatMessage("/weather clear")
+            client.player?.sendChatMessage("/weather clear ${config.weatherSettings.weatherDelay}")
             client.player?.closeScreen()
         }
 
         rainButton.setOnClick {
-            client.player?.sendChatMessage("/weather rain")
+            client.player?.sendChatMessage("/weather rain ${config.weatherSettings.weatherDelay}")
             client.player?.closeScreen()
         }
 
         thunderButton.setOnClick {
-            client.player?.sendChatMessage("/weather thunder")
+            client.player?.sendChatMessage("/weather thunder ${config.weatherSettings.weatherDelay}")
             client.player?.closeScreen()
         }
 
@@ -69,8 +73,8 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         val nightButton = WButton(TranslatableText("text.ktrl.time.night.label"))
         val mnButton = WButton(TranslatableText("text.ktrl.time.mn.label"))
         val zeroButton = WButton(TranslatableText("text.ktrl.time.zero.label"))
-        val addThousand = WButton(Text.of("+ 1000"))
-        val addTenThousand = WButton(Text.of("+ 10000"))
+        val addThousand = WButton(Text.of("+ ${config.timeSettings.addButton1}"))
+        val addTenThousand = WButton(Text.of("+ ${config.timeSettings.addButton2}"))
         val timeButton = WButton(TranslatableText("text.ktrl.time.button"))
 
         dayButton.setOnClick {
@@ -99,12 +103,12 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         }
 
         addThousand.setOnClick {
-            client.player?.sendChatMessage("/time add 1000")
+            client.player?.sendChatMessage("/time add ${config.timeSettings.addButton1}")
             client.player?.closeScreen()
         }
 
         addTenThousand.setOnClick {
-            client.player?.sendChatMessage("/time add 10000")
+            client.player?.sendChatMessage("/time add ${config.timeSettings.addButton2}")
             client.player?.closeScreen()
         }
 
