@@ -1,3 +1,1 @@
-- Added config api.
-- Removed curse stuffs.
-- Added support for Cloth Config API
+- Included cloth GUI API with the mod. If the game crashes please report on github and roll back to 1.3.0
