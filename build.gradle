@@ -45,11 +45,11 @@ dependencies {
 
     modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
 
-    modApi("me.shedaniel.cloth:cloth-config-fabric:4.11.14") {
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_api_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-    include("me.shedaniel.cloth:cloth-config-fabric:4.11.14")
+    include("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_api_version}")
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
