@@ -26,6 +26,14 @@ repositories {
     }
     maven { url 'https://maven.thebrokenrail.com' }
     maven { url "https://maven.shedaniel.me/" }
+
+    maven {
+        url  "https://dl.bintray.com/redstoneparadox/mods"
+    }
+
+    maven {
+        url = "https://ytg1234.github.io/maven"
+    }
 }
 
 dependencies {
@@ -43,13 +51,15 @@ dependencies {
 
     modImplementation include("io.github.cottonmc:LibGui:3.3.3+1.16.5")
 
-    modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
+    //modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
 
-    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_api_version}") {
-        exclude(group: "net.fabricmc.fabric-api")
+    include(modImplementation("io.github.cottonmc:Jankson-Fabric:${project.jankson}"))
+
+    modApi("io.github.redstoneparadox:ParadoxConfig:0.4.0-beta") {
+        exclude group: 'net.fabricmc.fabric-api'
+        exclude group: 'net.fabricmc.fabric-language-kotlin'
     }
-
-    include("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_api_version}")
+    include "io.github.redstoneparadox:ParadoxConfig:0.4.0-beta"
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.

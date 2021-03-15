@@ -1,24 +1,16 @@
 package xyz.ludoviko.ktrl.config
 
-import me.shedaniel.autoconfig.ConfigData
-import me.shedaniel.autoconfig.annotation.Config
-import me.shedaniel.autoconfig.annotation.ConfigEntry
+import io.github.redstoneparadox.paradoxconfig.config.ConfigCategory
 
-@Config(name = "ktrl")
-class ModConfig : ConfigData {
+object ModConfig : ConfigCategory("Kontrolo.json5") {
 
-    @ConfigEntry.Gui.CollapsibleObject
-    val timeSettings = Time()
+    object Time : ConfigCategory("time", "Config for time buttons") {
+        var addButton1: Int by option(1000, "addButton1", "First add button (default: 1000).")
 
-    @ConfigEntry.Gui.CollapsibleObject
-    val weatherSettings = Weather()
-
-    inner class Time {
-        var addButton1 = 1000
-        var addButton2 = 10000
+        var addButton2: Int by option(10000, "addButton2", "Second add button (default: 10000).")
     }
 
-    inner class Weather {
-        var weatherDelay = 1500
+    object Weather : ConfigCategory("weather", "Config for weather buttons") {
+        var weatherDelay: Int by option(1500, "delay", "Delay for how long a weather condition lasts (ticks).")
     }
 }

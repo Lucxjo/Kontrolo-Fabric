@@ -29,9 +29,6 @@
         "adapter": "kotlin",
         "value": "xyz.ludoviko.ktrl.Kontrolo"
       }
-    ],
-    "modmenu": [
-      "xyz.ludoviko.ktrl.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -41,6 +38,12 @@
     "modupdater": {
       "strategy": "curseforge",
       "projectID": 448869
+    },
+    "paradoxconfig": {
+      "package": "xyz.ludoviko.ktrl.config",
+      "configs": [
+        "ModConfig"
+      ]
     }
   },
   "depends": {
@@ -48,9 +51,12 @@
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "fabric-key-binding-api-v1": "*",
-    "minecraft": "1.16.x"
+    "minecraft": ">1.16.2"
   },
   "suggests": {
-    "flamingo": "*"
+    "flamingo": "*",
+    "modmenu": "*",
+    "cloth-config": "*",
+    "modupdater": "*"
   }
 }

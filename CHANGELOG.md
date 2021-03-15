@@ -1,1 +1,1 @@
-- Included cloth GUI API with the mod. If the game crashes please report on github and roll back to 1.3.0
+- Replaced Config API. The old configs can no longer be used.
