@@ -24,7 +24,7 @@ object Key {
         KeyBinding(
             "key.ktrl.gui.weather",
             InputUtil.Type.KEYSYM,
-            GLFW.GLFW_KEY_B,
+            GLFW.GLFW_KEY_UNKNOWN,
             "category.ktrl.gui"
         )
     )
@@ -32,7 +32,7 @@ object Key {
         KeyBinding(
             "key.ktrl.gui.time",
             InputUtil.Type.KEYSYM,
-            GLFW.GLFW_KEY_N,
+            GLFW.GLFW_KEY_UNKNOWN,
             "category.ktrl.gui"
         )
     )
@@ -40,7 +40,7 @@ object Key {
         KeyBinding(
             "key.ktrl.gui.gm",
             InputUtil.Type.KEYSYM,
-            GLFW.GLFW_KEY_M,
+            GLFW.GLFW_KEY_UNKNOWN,
             "category.ktrl.gui"
         )
     )

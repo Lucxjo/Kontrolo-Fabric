@@ -29,6 +29,12 @@
         "adapter": "kotlin",
         "value": "xyz.ludoviko.ktrl.Kontrolo"
       }
+    ],
+    "modmenu": [
+      {
+        "value": "xyz.ludoviko.ktrl.config.ModMenuIntegration",
+        "adapter": "kotlin"
+      }
     ]
   },
   "mixins": [
