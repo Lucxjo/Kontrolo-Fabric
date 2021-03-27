@@ -48,7 +48,8 @@
     "paradoxconfig": {
       "package": "xyz.ludoviko.ktrl.config",
       "configs": [
-        "ModConfig"
+        "ModConfig",
+        "ButtonConfig"
       ]
     }
   },
