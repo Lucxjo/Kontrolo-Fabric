@@ -25,5 +25,6 @@
     "text.ktrl.option.timeSettings.addButton1": "First add button",
     "text.ktrl.option.timeSettings.addButton2": "Second add button",
     "text.ktrl.option.weatherSettings": "Weather Settings",
-    "text.ktrl.option.weatherSettings.weatherDelay": "Delay (ticks)"
+    "text.ktrl.option.weatherSettings.weatherDelay": "Delay (ticks)",
+    "key.ktrl.gui.custom": "Custom GUI"
 }
