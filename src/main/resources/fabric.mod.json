@@ -44,13 +44,6 @@
     "modupdater": {
       "strategy": "curseforge",
       "projectID": 448869
-    },
-    "paradoxconfig": {
-      "package": "xyz.ludoviko.ktrl.config",
-      "configs": [
-        "ModConfig",
-        "ButtonConfig"
-      ]
     }
   },
   "depends": {

@@ -3,13 +3,15 @@ package xyz.ludoviko.ktrl.ui
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription
 import io.github.cottonmc.cotton.gui.widget.WButton
 import io.github.cottonmc.cotton.gui.widget.WGridPanel
+import me.shedaniel.autoconfig.AutoConfig
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
-import xyz.ludoviko.ktrl.config.ButtonConfig
+import xyz.ludoviko.ktrl.config.ModConfig
+
 
 class CustomUI(val client: MinecraftClient) : LightweightGuiDescription() {
     val root = WGridPanel()
-    var config = ButtonConfig
+    var config = AutoConfig.getConfigHolder(ModConfig::class.java).config
 
     init {
         setRootPanel(root)
@@ -18,34 +20,34 @@ class CustomUI(val client: MinecraftClient) : LightweightGuiDescription() {
     }
 
     fun add() {
-        if (config["button0.active"] as Boolean) addButton(
-            config["button0.title"] as String,
-            config["button0.command"] as String,
+        if (config.customGUI.b0.active) addButton(
+            config.customGUI.b0.title,
+            config.customGUI.b0.command,
             0
         )
-        if (config["button1.active"] as Boolean) addButton(
-            config["button1.title"] as String,
-            config["button1.command"] as String,
+        if (config.customGUI.b1.active) addButton(
+            config.customGUI.b1.title,
+            config.customGUI.b1.command,
             1
         )
-        if (config["button2.active"] as Boolean) addButton(
-            config["button2.title"] as String,
-            config["button2.command"] as String,
+        if (config.customGUI.b2.active) addButton(
+            config.customGUI.b2.title,
+            config.customGUI.b2.command,
             2
         )
-        if (config["button3.active"] as Boolean) addButton(
-            config["button3.title"] as String,
-            config["button3.command"] as String,
+        if (config.customGUI.b3.active) addButton(
+            config.customGUI.b3.title,
+            config.customGUI.b3.command,
             3
         )
-        if (config["button4.active"] as Boolean) addButton(
-            config["button4.title"] as String,
-            config["button4.command"] as String,
+        if (config.customGUI.b4.active) addButton(
+            config.customGUI.b4.title,
+            config.customGUI.b4.command,
             4
         )
-        if (config["button5.active"] as Boolean) addButton(
-            config["button5.title"] as String,
-            config["button5.command"] as String,
+        if (config.customGUI.b5.active) addButton(
+            config.customGUI.b5.title,
+            config.customGUI.b5.command,
             5
         )
     }
