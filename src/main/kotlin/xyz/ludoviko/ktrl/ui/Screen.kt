@@ -4,4 +4,4 @@ import io.github.cottonmc.cotton.gui.GuiDescription
 import io.github.cottonmc.cotton.gui.client.CottonClientScreen
 import net.minecraft.text.Text
 
-class Screen(description: GuiDescription) : CottonClientScreen(Text.of("§0Kontrolo"), description)
+class Screen(description: GuiDescription) : CottonClientScreen(Text.of("Kontrolo"), description)

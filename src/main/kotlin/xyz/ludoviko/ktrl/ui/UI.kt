@@ -21,18 +21,18 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
 
 
         if (type == GUIType.ALL) {
-            root.setSize(250, 150)
+            root.setSize(320, 200)
             addWeather(root)
             addTime(root, 3)
             addGamemode(root, 7)
         } else if (type == GUIType.WEATHER) {
-            root.setSize(150, 50)
+            root.setSize(250, 70)
             addWeather(root, size = 1)
         } else if (type == GUIType.TIME) {
-            root.setSize(200, 75)
+            root.setSize(330, 100)
             addTime(root)
         } else if (type == GUIType.GM) {
-            root.setSize(150, 50)
+            root.setSize(330, 80)
             addGamemode(root)
         } else {
             Kontrolo.logger.error("GUIType issue!")
@@ -60,10 +60,10 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
             client.player?.closeScreen()
         }
 
-        root.add(weatherLabel, 0, 1 + offset)
-        root.add(clearButton, 0, 2 + offset, 5 - size, 1)
-        root.add(rainButton, 5 - size, 2 + offset, 5 - size, 1)
-        root.add(thunderButton, if (size != 0) 10 - (size + 1) else 10, 2 + offset, 5 - size, 1)
+        root.add(weatherLabel, 1, 1 + offset)
+        root.add(clearButton, 1, 2 + offset, 5 - size, 1)
+        root.add(rainButton, 6 - size, 2 + offset, 5 - size, 1)
+        root.add(thunderButton, if (size != 0) 11 - (size + 1) else 11, 2 + offset, 5 - size, 1)
     }
 
     fun addTime(root: WGridPanel, offset: Int = 0) {
@@ -117,15 +117,15 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
             client.player?.closeScreen()
         }
 
-        root.add(timeLabel, 0, 1 + offset)
-        root.add(dayButton, 0, 2 + offset, 4, 1)
-        root.add(noonButton, 4, 2 + offset, 4, 1)
-        root.add(nightButton, 8, 2 + offset, 4, 1)
-        root.add(mnButton, 12, 2 + offset, 4, 1)
-        root.add(zeroButton, 0, 3 + offset, 4, 1)
-        root.add(addThousand, 4, 3 + offset, 4, 1)
-        root.add(addTenThousand, 8, 3 + offset, 4, 1)
-        root.add(timeButton, 12, 3 + offset, 4, 1)
+        root.add(timeLabel, 1, 1 + offset)
+        root.add(dayButton, 1, 2 + offset, 4, 1)
+        root.add(noonButton, 5, 2 + offset, 4, 1)
+        root.add(nightButton, 9, 2 + offset, 4, 1)
+        root.add(mnButton, 13, 2 + offset, 4, 1)
+        root.add(zeroButton, 1, 3 + offset, 4, 1)
+        root.add(addThousand, 5, 3 + offset, 4, 1)
+        root.add(addTenThousand, 9, 3 + offset, 4, 1)
+        root.add(timeButton, 13, 3 + offset, 4, 1)
     }
 
     fun addGamemode(root: WGridPanel, offset: Int = 0) {
@@ -155,10 +155,10 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
             client.player?.closeScreen()
         }
 
-        root.add(gamemodeLabel, 0, 1 + offset)
-        root.add(creativeButton, 0, 2 + offset, 4, 1)
-        root.add(survivalButton, 4, 2 + offset, 4, 1)
-        root.add(adventureButton, 8, 2 + offset, 4, 1)
-        root.add(spectatorButton, 12, 2 + offset, 4, 1)
+        root.add(gamemodeLabel, 1, 1 + offset)
+        root.add(creativeButton, 1, 2 + offset, 4, 1)
+        root.add(survivalButton, 5, 2 + offset, 4, 1)
+        root.add(adventureButton, 9, 2 + offset, 4, 1)
+        root.add(spectatorButton, 13, 2 + offset, 4, 1)
     }
 }
