@@ -7,35 +7,23 @@ plugins {
     id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
-archivesBaseName = project.archives_base_name
-version = project.mod_version + "+" + project.minecraft_version
-group = project.maven_group
+archivesBaseName = project.archivesBaseName
+version = project.modVersion + "+" + project.minecraft_version
+group = project.mavenGroup
 
 minecraft {
 }
 
-
 repositories {
-    maven { url = "http://maven.fabricmc.net/" }
+    maven { url "https://maven.shedaniel.me/" }
     maven {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
     }
-    maven { url 'https://maven.thebrokenrail.com' }
-    maven { url "https://maven.shedaniel.me/" }
-
     maven { url 'https://jitpack.io' }
-    maven {
-        url "https://maven.terraformersmc.com/"
-    }
-
-
-    maven {
-        url = "https://ytg1234.github.io/maven"
-    }
 }
 
 dependencies {
@@ -48,10 +36,8 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
-    
-    modImplementation "io.github.prospector:modmenu:1.14.13+build.19"
 
-    modImplementation include("io.github.cottonmc:LibGui:3.3.3+1.16.5")
+    modImplementation include("io.github.cottonmc:LibGui:4.1.0+1.17")
 
     //modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
 
@@ -64,6 +50,7 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
@@ -88,10 +75,12 @@ tasks.withType(JavaCompile) {
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = "sources"
     from sourceSets.main.allSource
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
 jar {
     from "LICENSE"
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
 // configure the maven publication

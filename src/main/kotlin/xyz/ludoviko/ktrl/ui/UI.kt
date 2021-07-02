@@ -14,7 +14,7 @@ import xyz.ludoviko.ktrl.config.ModConfig
 
 class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription() {
     val root = WGridPanel()
-    var config = AutoConfig.getConfigHolder(ModConfig::class.java).config
+    var config = AutoConfig.getConfigHolder<ModConfig>(ModConfig::class.java).config
 
     init {
         setRootPanel(root)

@@ -16,7 +16,7 @@
   "contact": {
     "homepage": "https://ludoviko.xyz/",
     "sources": "https://github.com/Lucxjo/Kontrolo",
-    "email": "minecraft@ludoviko.xyz",
+    "email": "mc@ludoviko.xyz",
     "issues": "https://github.com/Lucxjo/Kontrolo/issues",
     "twitter": "https://twitter.com/Ludoviko_"
   },
@@ -28,12 +28,6 @@
       {
         "adapter": "kotlin",
         "value": "xyz.ludoviko.ktrl.Kontrolo"
-      }
-    ],
-    "modmenu": [
-      {
-        "value": "xyz.ludoviko.ktrl.config.ModMenuIntegration",
-        "adapter": "kotlin"
       }
     ]
   },

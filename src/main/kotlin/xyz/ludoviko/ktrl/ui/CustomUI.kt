@@ -11,7 +11,7 @@ import xyz.ludoviko.ktrl.config.ModConfig
 
 class CustomUI(val client: MinecraftClient) : LightweightGuiDescription() {
     val root = WGridPanel()
-    var config = AutoConfig.getConfigHolder(ModConfig::class.java).config
+    var config = AutoConfig.getConfigHolder<ModConfig>(ModConfig::class.java).config
 
     init {
         setRootPanel(root)
@@ -55,7 +55,7 @@ class CustomUI(val client: MinecraftClient) : LightweightGuiDescription() {
     fun addButton(title: String, command: String, pos: Int) {
         val button = WButton(Text.of(title))
         button.setOnClick {
-            client.player?.sendChatMessage(command)
+
         }
         if (pos == 0)
             root.add(button, 0, 1, 5, 1)
