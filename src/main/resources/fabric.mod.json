@@ -38,6 +38,9 @@
     "modupdater": {
       "strategy": "curseforge",
       "projectID": 448869
+    },
+    "modmanager": {
+      "modrinth": "6wfXHI7P"
     }
   },
   "depends": {
