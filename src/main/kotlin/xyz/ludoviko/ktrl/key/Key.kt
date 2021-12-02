@@ -59,22 +59,22 @@ object Key {
         ClientTickEvents.END_CLIENT_TICK.register(
             ClientTickEvents.EndTick { client: MinecraftClient ->
                 while (mainBinding.wasPressed()) {
-                    client.openScreen(Screen(UI(client, GUIType.ALL)))
+                    client.setScreen(Screen(UI(client, GUIType.ALL)))
                 }
 
                 while (weatherBinding.wasPressed()) {
-                    client.openScreen(Screen(UI(client, GUIType.WEATHER)))
+                    client.setScreen(Screen(UI(client, GUIType.WEATHER)))
                 }
 
                 while (timeBinding.wasPressed()) {
-                    client.openScreen(Screen(UI(client, GUIType.TIME)))
+                    client.setScreen(Screen(UI(client, GUIType.TIME)))
                 }
 
                 while (gmBinding.wasPressed()) {
-                    client.openScreen(Screen(UI(client, GUIType.GM)))
+                    client.setScreen(Screen(UI(client, GUIType.GM)))
                 }
                 while (cBinding.wasPressed()) {
-                    client.openScreen(Screen(CustomUI(client)))
+                    client.setScreen(Screen(CustomUI(client)))
                 }
             }
         )
