@@ -8,16 +8,16 @@
     {
       "name": "Ludoviko",
       "contact": {
-        "email": "me@ludoviko.xyz",
+        "email": "me@ludoviko.ch",
         "twitter": "https://twitter.com/Ludoviko_"
       }
     }
   ],
   "contact": {
-    "homepage": "https://ludoviko.xyz/",
-    "sources": "https://github.com/Lucxjo/Kontrolo",
-    "email": "mc@ludoviko.xyz",
-    "issues": "https://github.com/Lucxjo/Kontrolo/issues",
+    "homepage": "https://ludoviko.ch/",
+    "sources": "https://github.com/Lucxjo/Kontrolo-Fabric",
+    "email": "mc@ludoviko.ch",
+    "issues": "https://github.com/Lucxjo/Kontrolo-Fabric/issues",
     "twitter": "https://twitter.com/Ludoviko_"
   },
   "license": "MIT",
@@ -29,15 +29,29 @@
         "adapter": "kotlin",
         "value": "xyz.ludoviko.ktrl.Kontrolo"
       }
+    ],
+    "modmenu": [
+      {
+        "adapter": "kotlin",
+        "value": "xyz.ludoviko.ktrl.config.KtrlModMenuIntegration"
+      }
     ]
   },
   "mixins": [
   ],
   "custom": {
-    "modmenu:clientsideOnly": true,
+    "modmenu": {
+      "clientsideOnly": true,
+      "links": {
+        "modmenu.discord": "https://discord.gg/UZRyJrEPTU"
+      }
+    },
     "modupdater": {
       "strategy": "curseforge",
       "projectID": 448869
+    },
+    "modmanager": {
+      "modrinth": "6wfXHI7P"
     }
   },
   "depends": {
@@ -45,12 +59,12 @@
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "fabric-key-binding-api-v1": "*",
-    "minecraft": ">1.16.2"
+    "cloth-config2": ">=5.1.20",
+    "minecraft": "1.17.x"
   },
   "suggests": {
     "flamingo": "*",
     "modmenu": "*",
-    "cloth-config": "*",
     "modupdater": "*"
   }
 }
