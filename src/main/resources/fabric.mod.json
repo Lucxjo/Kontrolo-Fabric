@@ -29,6 +29,12 @@
         "adapter": "kotlin",
         "value": "xyz.ludoviko.ktrl.Kontrolo"
       }
+    ],
+    "modmenu": [
+      {
+        "adapter": "kotlin",
+        "value": "xyz.ludoviko.ktrl.config.KtrlModMenuIntegration"
+      }
     ]
   },
   "mixins": [
@@ -53,12 +59,12 @@
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "fabric-key-binding-api-v1": "*",
-    "minecraft": ">1.16.2"
+    "cloth-config2": ">=5.1.20",
+    "minecraft": "1.17.x"
   },
   "suggests": {
     "flamingo": "*",
     "modmenu": "*",
-    "cloth-config": "*",
     "modupdater": "*"
   }
 }

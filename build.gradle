@@ -18,12 +18,23 @@ minecraft {
 }
 
 repositories {
-    maven { url "https://maven.shedaniel.me/" }
+    maven {
+        name 'Shedaniel'
+        url "https://maven.shedaniel.me/"
+    }
     maven {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
     }
-    maven { url 'https://jitpack.io' }
+    maven {
+        name 'Jitpack'
+        url 'https://jitpack.io'
+    }
+
+    maven {
+        name 'TerraformersMC'
+        url "https://maven.terraformersmc.com/releases"
+    }
 }
 
 dependencies {
@@ -40,10 +51,11 @@ dependencies {
     modImplementation include("io.github.cottonmc:LibGui:4.1.0+1.17")
 
     //modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
+    modImplementation "com.terraformersmc:modmenu:2.0.13"
 
     include(modImplementation("io.github.cottonmc:Jankson-Fabric:${project.jankson}"))
 
-    modApi("me.shedaniel.cloth:cloth-config-fabric:4.11.26") {
+    modApi("me.shedaniel.cloth:cloth-config-fabric:5.1.40") {
         exclude(group: "net.fabricmc.fabric-api")
     }
 }
@@ -111,7 +123,8 @@ task publishModrinth (type: TaskModrinthUpload) {
     projectId = '6wfXHI7P' // The ID of your modrinth project, slugs will not work.
     versionNumber = project.version // The version of the mod to upload.
     uploadFile = remapJar // This links to a task that builds your mod jar and sets "uploadFile" to the mod jar.
-    addGameVersion('1.16.5') // Any minecraft version.
+    addGameVersion('1.17') // Any minecraft version.
+    addGameVersion('1.17.1')
     addLoader('fabric') // Can be fabric or forge. Modrinth will support liteloader and rift at a later date.
 }
 
