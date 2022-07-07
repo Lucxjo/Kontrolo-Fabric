@@ -54,8 +54,10 @@ class CustomUI(val client: MinecraftClient) : LightweightGuiDescription() {
 
     fun addButton(title: String, command: String, pos: Int) {
         val button = WButton(Text.of(title))
+        var cleanCommand = command;
+        if (command.startsWith("/")) cleanCommand = command.substring(1, command.length)
         button.setOnClick {
-
+            client.player?.sendCommand(cleanCommand)
         }
         if (pos == 0)
             root.add(button, 0, 1, 5, 1)
