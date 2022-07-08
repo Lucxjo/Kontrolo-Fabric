@@ -1,4 +1,7 @@
 # Kontrolo
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## About
 
 Adds a GUI to quickly access common commands.
@@ -19,3 +22,23 @@ When you press one of the buttons, it sends the command for you. This is why you
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11QFO6)
 <a href="https://liberapay.com/Ludoviko/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://motschen.midnightdust.eu/"><img src="https://avatars.githubusercontent.com/u/49783724?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Prokoph</b></sub></a><br /><a href="https://github.com/Lucxjo/Kontrolo-Fabric/commits?author=Motschen" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
