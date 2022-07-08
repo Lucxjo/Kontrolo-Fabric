@@ -1,0 +1,34 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Lucxjo",
+      "name": "Ludoviko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4950364?v=4",
+      "profile": "https://ludoviko.ch",
+      "contributions": [
+        "ideas",
+        "code"
+      ]
+    }
+    {
+      "login": "Motschen",
+      "name": "Martin Prokoph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49783724?v=4",
+      "profile": "https://motschen.midnightdust.eu/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Kontrolo-Fabric",
+  "projectOwner": "Lucxjo",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
