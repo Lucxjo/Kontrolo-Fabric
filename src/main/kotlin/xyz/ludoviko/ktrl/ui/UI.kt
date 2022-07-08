@@ -7,14 +7,13 @@ import io.github.cottonmc.cotton.gui.widget.WLabel
 import me.shedaniel.autoconfig.AutoConfig
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
-import net.minecraft.text.TranslatableText
 import xyz.ludoviko.ktrl.Kontrolo
 import xyz.ludoviko.ktrl.config.ModConfig
 
 
 class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription() {
     val root = WGridPanel()
-    var config = AutoConfig.getConfigHolder<ModConfig>(ModConfig::class.java).config
+    var config = AutoConfig.getConfigHolder(ModConfig::class.java).config
 
     init {
         setRootPanel(root)
@@ -40,23 +39,23 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
     }
 
     fun addWeather(root: WGridPanel, offset: Int = 0, size: Int = 0) {
-        val weatherLabel = WLabel(TranslatableText("text.ktrl.weather.label"))
-        val clearButton = WButton(TranslatableText("text.ktrl.weather.clear.label"))
-        val rainButton = WButton(TranslatableText("text.ktrl.weather.rain.label"))
-        val thunderButton = WButton(TranslatableText("text.ktrl.weather.thunder.label"))
+        val weatherLabel = WLabel(Text.translatable("text.ktrl.weather.label"))
+        val clearButton = WButton(Text.translatable("text.ktrl.weather.clear.label"))
+        val rainButton = WButton(Text.translatable("text.ktrl.weather.rain.label"))
+        val thunderButton = WButton(Text.translatable("text.ktrl.weather.thunder.label"))
 
         clearButton.setOnClick {
-            client.player?.sendChatMessage("/weather clear ${config.main.weather.delay}")
+            client.player?.sendCommand("weather clear ${config.main.weather.delay}")
             client.player?.closeScreen()
         }
 
         rainButton.setOnClick {
-            client.player?.sendChatMessage("/weather rain ${config.main.weather.delay}")
+            client.player?.sendCommand("weather rain ${config.main.weather.delay}")
             client.player?.closeScreen()
         }
 
         thunderButton.setOnClick {
-            client.player?.sendChatMessage("/weather thunder ${config.main.weather.delay}")
+            client.player?.sendCommand("weather thunder ${config.main.weather.delay}")
             client.player?.closeScreen()
         }
 
@@ -67,53 +66,53 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
     }
 
     fun addTime(root: WGridPanel, offset: Int = 0) {
-        val timeLabel = WLabel(TranslatableText("text.ktrl.time.label"))
-        val dayButton = WButton(TranslatableText("text.ktrl.time.day.label"))
-        val noonButton = WButton(TranslatableText("text.ktrl.time.noon.label"))
-        val nightButton = WButton(TranslatableText("text.ktrl.time.night.label"))
-        val mnButton = WButton(TranslatableText("text.ktrl.time.mn.label"))
-        val zeroButton = WButton(TranslatableText("text.ktrl.time.zero.label"))
+        val timeLabel = WLabel(Text.translatable("text.ktrl.time.label"))
+        val dayButton = WButton(Text.translatable("text.ktrl.time.day.label"))
+        val noonButton = WButton(Text.translatable("text.ktrl.time.noon.label"))
+        val nightButton = WButton(Text.translatable("text.ktrl.time.night.label"))
+        val mnButton = WButton(Text.translatable("text.ktrl.time.mn.label"))
+        val zeroButton = WButton(Text.translatable("text.ktrl.time.zero.label"))
         val addThousand = WButton(Text.of("+ ${config.main.time.addButton1}"))
         val addTenThousand = WButton(Text.of("+ ${config.main.time.addButton2}"))
-        val timeButton = WButton(TranslatableText("text.ktrl.time.button"))
+        val timeButton = WButton(Text.translatable("text.ktrl.time.button"))
 
         dayButton.setOnClick {
-            client.player?.sendChatMessage("/time set day")
+            client.player?.sendCommand("time set day")
             client.player?.closeScreen()
         }
 
         noonButton.setOnClick {
-            client.player?.sendChatMessage("/time set noon")
+            client.player?.sendCommand("time set noon")
             client.player?.closeScreen()
         }
 
         nightButton.setOnClick {
-            client.player?.sendChatMessage("/time set night")
+            client.player?.sendCommand("time set night")
             client.player?.closeScreen()
         }
 
         mnButton.setOnClick {
-            client.player?.sendChatMessage("/time set midnight")
+            client.player?.sendCommand("time set midnight")
             client.player?.closeScreen()
         }
 
         zeroButton.setOnClick {
-            client.player?.sendChatMessage("/time set 0")
+            client.player?.sendCommand("time set 0")
             client.player?.closeScreen()
         }
 
         addThousand.setOnClick {
-            client.player?.sendChatMessage("/time add ${config.main.time.addButton1}")
+            client.player?.sendCommand("time add ${config.main.time.addButton1}")
             client.player?.closeScreen()
         }
 
         addTenThousand.setOnClick {
-            client.player?.sendChatMessage("/time add ${config.main.time.addButton2}")
+            client.player?.sendCommand("time add ${config.main.time.addButton2}")
             client.player?.closeScreen()
         }
 
         timeButton.setOnClick {
-            client.player?.sendChatMessage("/time query gametime")
+            client.player?.sendCommand("time query gametime")
             client.player?.closeScreen()
         }
 
@@ -129,29 +128,29 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
     }
 
     fun addGamemode(root: WGridPanel, offset: Int = 0) {
-        val gamemodeLabel = WLabel(TranslatableText("text.ktrl.gm.label"))
-        val creativeButton = WButton(TranslatableText("text.ktrl.gm.creative.label"))
-        val survivalButton = WButton(TranslatableText("text.ktrl.gm.survival.label"))
-        val adventureButton = WButton(TranslatableText("text.ktrl.gm.adventure.label"))
-        val spectatorButton = WButton(TranslatableText("text.ktrl.gm.spectator.label"))
+        val gamemodeLabel = WLabel(Text.translatable("text.ktrl.gm.label"))
+        val creativeButton = WButton(Text.translatable("text.ktrl.gm.creative.label"))
+        val survivalButton = WButton(Text.translatable("text.ktrl.gm.survival.label"))
+        val adventureButton = WButton(Text.translatable("text.ktrl.gm.adventure.label"))
+        val spectatorButton = WButton(Text.translatable("text.ktrl.gm.spectator.label"))
 
         creativeButton.setOnClick {
-            client.player?.sendChatMessage("/gamemode creative")
+            client.player?.sendCommand("gamemode creative")
             client.player?.closeScreen()
         }
 
         survivalButton.setOnClick {
-            client.player?.sendChatMessage("/gamemode survival")
+            client.player?.sendCommand("gamemode survival")
             client.player?.closeScreen()
         }
 
         adventureButton.setOnClick {
-            client.player?.sendChatMessage("/gamemode adventure")
+            client.player?.sendCommand("gamemode adventure")
             client.player?.closeScreen()
         }
 
         spectatorButton.setOnClick {
-            client.player?.sendChatMessage("/gamemode spectator")
+            client.player?.sendCommand("gamemode spectator")
             client.player?.closeScreen()
         }
 
