@@ -6,6 +6,16 @@
   "commit": false,
   "contributors": [
     {
+      "login": "Lucxjo",
+      "name": "Ludoviko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4950364?v=4",
+      "profile": "https://ludoviko.ch",
+      "contributions": [
+        "ideas",
+        "code"
+      ]
+    }
+    {
       "login": "Motschen",
       "name": "Martin Prokoph",
       "avatar_url": "https://avatars.githubusercontent.com/u/49783724?v=4",
