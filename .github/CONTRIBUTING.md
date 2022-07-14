@@ -1,6 +1,6 @@
 # How to contribute
 
-Contributions to NickNelson are highly encouraged and desired. Below are some guidelines that will help make the process as smooth as possible.
+Contributions to Kontrolo are highly encouraged and desired. Below are some guidelines that will help make the process as smooth as possible.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ Contributions to NickNelson are highly encouraged and desired. Below are some gu
 ## Making Changes
 
 - From your fork of the repository, create a topic branch where work on your change will take place.
-- To quickly create a topic branch based on master; `git checkout -b my_contribution master`. Please avoid working directly on the `master` branch.
+- To quickly create a topic branch based on release/1-18; `git checkout -b my_contribution release/1-18`. Please avoid working directly on any of the `release` prefixed branches.
 - Make commits of logical units.
 - Check for unnecessary whitespace with `git diff --check` before committing.
 - Please follow the prevailing code conventions in the repository. Differences in style make the code harder to understand for everyone.
