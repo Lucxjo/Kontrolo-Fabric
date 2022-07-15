@@ -27,6 +27,9 @@ doesn't need to be added on the serverside.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11QFO6)
 <a href="https://liberapay.com/Ludoviko/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
+## Contributing
+If you'd like to help improve Kontrolo, please feel free. Please follow the [Code of Conduct](/.github/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](/.github/CONTRIBUTING.md). In addition to these, please either join my [Discord community](//discord.gg/UZRyJrEPTU) or my [Gitter room](//gitter.im/Lucxjo/kontrolo-fabric). Please ensure that all commits are tied to an issue number, and are signed off. It is preferred that you also sign the commit wit GPG, although this isn't mandatory.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
