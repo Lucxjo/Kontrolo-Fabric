@@ -3,6 +3,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Join the chat at https://gitter.im/Lucxjo/kontrolo-fabric](https://badges.gitter.im/Lucxjo/kontrolo-fabric.svg)](https://gitter.im/Lucxjo/kontrolo-fabric?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## About
 
@@ -24,7 +25,7 @@ doesn't need to be added on the serverside.
 
 ## Like this mod?
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11QFO6) [![Join the chat at https://gitter.im/Lucxjo/kontrolo-fabric](https://badges.gitter.im/Lucxjo/kontrolo-fabric.svg)](https://gitter.im/Lucxjo/kontrolo-fabric?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11QFO6) 
 <a href="https://liberapay.com/Ludoviko/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 ## Contributing
