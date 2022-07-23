@@ -15,3 +15,8 @@ out/
 
 run/
 minecraft/
+
+# locales
+src/main/resources/assets/ktrl/lang/*.json
+!src/main/resources/assets/ktrl/lang/en_us.json
+!src/main/resources/assets/ktrl/lang/eo_uy.json
