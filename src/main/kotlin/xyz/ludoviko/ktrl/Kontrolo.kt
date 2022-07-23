@@ -1,5 +1,6 @@
 package xyz.ludoviko.ktrl
 
+import de.guntram.mcmod.crowdintranslate.CrowdinTranslate
 import me.shedaniel.autoconfig.AutoConfig
 import me.shedaniel.autoconfig.annotation.Config
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer
@@ -16,6 +17,7 @@ object Kontrolo : ModInitializer {
 
     override fun onInitialize() {
         logger.info("Initialised!")
+        CrowdinTranslate.downloadTranslations("kontrolo", this.ID)
         Key
 
         AutoConfig.register(
