@@ -1,3 +1,15 @@
+buildscript {
+    dependencies {
+        classpath "de.guntram.mcmod:crowdin-translate:${project.crowdin_version}"
+    }
+    repositories {
+        maven {
+            name = 'CrowdinTranslate source'
+            url = "https://minecraft.guntram.de/maven/"
+        }
+    }
+}
+
 plugins {
     id 'java'
     id 'fabric-loom'
@@ -14,6 +26,12 @@ archivesBaseName = project.archivesBaseName
 version = project.modVersion + "+" + project.minecraft_version
 group = project.mavenGroup
 
+
+apply plugin: 'de.guntram.mcmod.crowdin-translate'
+crowdintranslate.crowdinProjectName = 'kontrolo'
+crowdintranslate.minecraftProjectName = 'ktrl'
+crowdintranslate.verbose = true
+
 repositories {
     maven {
         name 'Shedaniel'
@@ -27,6 +45,10 @@ repositories {
     maven {
         name 'TerraformersMC'
         url "https://maven.terraformersmc.com/releases"
+    }
+    maven {
+        name = 'CrowdinTranslate source'
+        url = "https://minecraft.guntram.de/maven/"
     }
 }
 
@@ -42,6 +64,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
     modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
+
+    modImplementation include("de.guntram.mcmod:crowdin-translate:${project.crowdin_version}")
 
     //modImplementation "com.thebrokenrail:modupdater:1.1.11+1.16.2-rc2"
     modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
