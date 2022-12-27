@@ -38,6 +38,11 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         }
     }
 
+    private fun sendCommand(command: String) {
+        client.networkHandler?.sendCommand(command)
+        client.player?.closeScreen()
+    }
+
     fun addWeather(root: WGridPanel, offset: Int = 0, size: Int = 0) {
         val weatherLabel = WLabel(Text.translatable("text.ktrl.weather.label"))
         val clearButton = WButton(Text.translatable("text.ktrl.weather.clear.label"))
@@ -45,18 +50,15 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         val thunderButton = WButton(Text.translatable("text.ktrl.weather.thunder.label"))
 
         clearButton.setOnClick {
-            client.player?.sendCommand("weather clear ${config.main.weather.delay}")
-            client.player?.closeScreen()
+            sendCommand("weather clear ${config.main.weather.delay}")
         }
 
         rainButton.setOnClick {
-            client.player?.sendCommand("weather rain ${config.main.weather.delay}")
-            client.player?.closeScreen()
+            sendCommand("weather rain ${config.main.weather.delay}")
         }
 
         thunderButton.setOnClick {
-            client.player?.sendCommand("weather thunder ${config.main.weather.delay}")
-            client.player?.closeScreen()
+            sendCommand("weather thunder ${config.main.weather.delay}")
         }
 
         root.add(weatherLabel, 1, 1 + offset)
@@ -77,43 +79,35 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         val timeButton = WButton(Text.translatable("text.ktrl.time.button"))
 
         dayButton.setOnClick {
-            client.player?.sendCommand("time set day")
-            client.player?.closeScreen()
+            sendCommand("time set day")
         }
 
         noonButton.setOnClick {
-            client.player?.sendCommand("time set noon")
-            client.player?.closeScreen()
+            sendCommand("time set noon")
         }
 
         nightButton.setOnClick {
-            client.player?.sendCommand("time set night")
-            client.player?.closeScreen()
+            sendCommand("time set night")
         }
 
         mnButton.setOnClick {
-            client.player?.sendCommand("time set midnight")
-            client.player?.closeScreen()
+            sendCommand("time set midnight")
         }
 
         zeroButton.setOnClick {
-            client.player?.sendCommand("time set 0")
-            client.player?.closeScreen()
+            sendCommand("time set 0")
         }
 
         addThousand.setOnClick {
-            client.player?.sendCommand("time add ${config.main.time.addButton1}")
-            client.player?.closeScreen()
+            sendCommand("time add ${config.main.time.addButton1}")
         }
 
         addTenThousand.setOnClick {
-            client.player?.sendCommand("time add ${config.main.time.addButton2}")
-            client.player?.closeScreen()
+            sendCommand("time add ${config.main.time.addButton2}")
         }
 
         timeButton.setOnClick {
-            client.player?.sendCommand("time query gametime")
-            client.player?.closeScreen()
+            sendCommand("time query gametime")
         }
 
         root.add(timeLabel, 1, 1 + offset)
@@ -135,23 +129,19 @@ class UI(val client: MinecraftClient, type: GUIType) : LightweightGuiDescription
         val spectatorButton = WButton(Text.translatable("text.ktrl.gm.spectator.label"))
 
         creativeButton.setOnClick {
-            client.player?.sendCommand("gamemode creative")
-            client.player?.closeScreen()
+            sendCommand("gamemode creative")
         }
 
         survivalButton.setOnClick {
-            client.player?.sendCommand("gamemode survival")
-            client.player?.closeScreen()
+            sendCommand("gamemode survival")
         }
 
         adventureButton.setOnClick {
-            client.player?.sendCommand("gamemode adventure")
-            client.player?.closeScreen()
+            sendCommand("gamemode adventure")
         }
 
         spectatorButton.setOnClick {
-            client.player?.sendCommand("gamemode spectator")
-            client.player?.closeScreen()
+            sendCommand("gamemode spectator")
         }
 
         root.add(gamemodeLabel, 1, 1 + offset)
